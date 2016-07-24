@@ -37,6 +37,7 @@ has_many :comments
 prototype_image.rb
 ```
 belongs_to :prototype
+enum role: %i(main sub)
 ```
 
 like.rb
