@@ -71,9 +71,9 @@ belongs_to :prototype
 |references|varchar  |varchar    |text     |
 
 ### prototype_images
-|prototype\_id|content  |
-|:-----------:|:-------:|
-|references   |text     |
+|prototype\_id|content  |role   |
+|:-----------:|:-------:|:-----:|
+|references   |text     |integer|
 
 ### likes
 |user\_id  |prototype\_id|
