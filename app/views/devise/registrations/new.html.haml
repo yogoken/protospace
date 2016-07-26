@@ -1,0 +1,28 @@
+%form.container.user-new{action: ""}
+  .col-md-8.col-md-offset-2
+    %header.row.user-nav.row
+      .col-md-12
+        %h2 Register
+        .user-name_image.row
+          .user-name.col-md-10
+            %input{type: "text", placeholder: "Username"}/
+          .user-image.col-md-2
+            %button.btn.btn-primary Add image
+            %input{type: "file"}/
+        %input.user-email{type: "email", placeholder: "E-Mail"}/
+        %input.user-password{type: "password", placeholder: "Password"}/
+      .col-md-12
+        %h4 Member of
+        .user-user-member.row
+          .user-name.col-md-12
+            %input{type: "text", placeholder: "Member"}/
+        %h4 Profile
+        .user-user-profile.row
+          .user-name.col-md-12
+            %textarea{name: "textarea", cols: "30", rows: "4", placeholder: "Profile"}
+        %h4 Works
+        .user-name_image.row
+          .user-name.col-md-12
+            %textarea{name: "textarea", cols: "30", rows: "4", placeholder: "Works"}
+    .row.text-center.user-btn
+      %button.btn.btn-lg.btn-primary.btn-block{type: "submit"} Save

@@ -1,0 +1,36 @@
+%form.container.user-new{action: ""}
+  .col-md-8.col-md-offset-2
+    %header.row.user-nav.row
+      .col-md-12
+        %h2 Edit Profile
+        .user-name_image.row
+          .user-name.col-md-10
+            %input{type: "text", placeholder: "Username", value: "TECH::MASTER"}/
+          .user-image.col-md-2{:style: 'background-image: url(http://泣ける動画.com/wp-content/uploads/2015/01/t0205-01.jpg);'}
+            %button.btn.btn-primary Change image
+            %input{type: "file"}/
+        %input.user-email{type: "email", placeholder: "E-Mail", value: "wakatsuki@we-b.co.jp"}/
+        %input.user-password{type: "password", placeholder: "Password"}/
+      .col-md-12
+        %h4 Member of
+        .user-user-member.row
+          .user-name.col-md-12
+            %input{type: "text", placeholder: "Member", value: "we-b inc."}/
+        %h4 Profile
+        .user-user-profile.row
+          .user-name.col-md-12
+            %textarea{name: "textarea", cols: "30", rows: "4", placeholder: "Profile"}
+              I designer. I'm working with we-b inc.
+              I believe the everyday Web and UI / UX.
+              My hobby is collecting cassette tape.
+              Thank you very much in advance.
+        %h4 Works
+        .user-name_image.row
+          .user-name.col-md-12
+            %textarea{name: "textarea", cols: "30", rows: "4", placeholder: "Works"}
+              2012 Sakura Internet inc. Designer
+              2012 we-b inc. Designer
+              2012 Life is Tech. Mentor
+              2014 Cookpad inc. Designer
+    .row.text-center.user-btn
+      %button.btn.btn-lg.btn-primary.btn-block{type: "submit"} Save
