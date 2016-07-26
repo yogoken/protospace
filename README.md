@@ -63,12 +63,12 @@ belongs_to :prototype
 
 |username|email |encrypted_password|profile|work    |group  |avatar|
 |:------:|:----:|:----------------:|:-----:|:------:|:-----:|:----:|
-|string  |string|varchar           |text   |varchar |varchar|string|
+|string  |string|varchar           |text   |string  |string |string|
 
 ### prototypes
 |user\_id  |title    |catch\_copy|concept  |
 |:--------:|:-------:|:---------:|:-------:|
-|references|varchar  |varchar    |text     |
+|references|string   |string     |text     |
 
 ### prototype_images
 |prototype\_id|content  |role   |
