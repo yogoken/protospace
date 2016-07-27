@@ -6,7 +6,7 @@
           %h2 Register
           .user-name_image.row
             .user-name.col-md-10
-              = f.text_field :name, autofocus: true, placeholder: "Username", required: true
+              = f.text_field :username, autofocus: true, placeholder: "Username", required: true
             .user-image.col-md-2
               = f.button "Add image", class: "btn btn-primary"
               = f.file_field :avatar
