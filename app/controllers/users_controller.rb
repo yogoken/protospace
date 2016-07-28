@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :set_user, only: [:show, :edit, :update]
-  before_action :authenticate_user!, only: :update
+  before_action :authenticate_user!, only: [:edit, :update]
 
   def show
   end
@@ -10,10 +10,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.id == current_user.id
-      @user.update(user_params)
-      redirect_to :root
-    end
+    current_user.update(user_params)
+    redirect_to root_url
   end
 
   private
