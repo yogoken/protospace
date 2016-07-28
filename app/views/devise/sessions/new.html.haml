@@ -1,16 +1,15 @@
 .container
-  %form.form-signin
+  = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-signin" }) do |f|
     %h2.form-signin-heading Please sign in
-    %label.sr-only{ for: "inputEmail" } Email address
-    %input#inputEmail.form-control{ autofocus: "", placeholder: "Email address", required: "", type: "email" }/
-    %label.sr-only{ for: "inputPassword" } Password
-    %input#inputPassword.form-control{ placeholder: "Password", required: "", type: "password" }/
-    .checkbox
-      %label
-        %input{ type: "checkbox", value: "remember-me" }/
-        Remember me
-    %button.btn.btn-lg.btn-primary.btn-block{ type: "submit" } Sign in
+    = f.label :email
+    = f.email_field :email, placeholder: "Email address", autofocus: true, required: true, class: "form-control"
+    = f.label :password
+    = f.password_field :password, placeholder: "Password", required: true, class: "form-control"
+    .checkboxg
+      = f.label :remember_me
+      = f.check_box :remember_me
+      = f.submit 'Sign in', class: "btn btn-lg btn-primary btn-block"
   .text-center
     %p
       Not a member?
-      %a{ href: "/users/sign_in" } Sign up now
+      =link_to "Sign up now", new_user_registration_path
