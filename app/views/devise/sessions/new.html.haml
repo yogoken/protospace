@@ -1,5 +1,6 @@
 .container
   = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-signin" }) do |f|
+    = devise_error_messages!
     %h2.form-signin-heading Please sign in
     = f.label :email
     = f.email_field :email, placeholder: "Email address", autofocus: true, required: true, class: "form-control"
