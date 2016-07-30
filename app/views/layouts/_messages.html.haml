@@ -1,0 +1,6 @@
+- flash.each do |key, value|
+  - if value == notice
+    = content_tag(:div, value, class: "alert alert-success")
+    / ↑これにより、<div class="alert alert-success">value</div>が生成される
+  - else
+    = content_tag(:div, value, class: "alert alert-error")
