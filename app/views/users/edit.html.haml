@@ -1,36 +1,30 @@
-%form.container.user-new{ action: "" }
-  .col-md-8.col-md-offset-2
-    %header.row.user-nav.row
-      .col-md-12
-        %h2 Edit Profile
-        .user-name_image.row
-          .user-name.col-md-10
-            %input{ type: "text", placeholder: "Username", value: "TECH::MASTER" }/
-          .user-image.col-md-2{ :style: 'background-image: url(http://泣ける動画.com/wp-content/uploads/2015/01/t0205-01.jpg);' }
-            %button.btn.btn-primary Change image
-            %input{ type: "file" }/
-        %input.user-email{ type: "email", placeholder: "E-Mail", value: "wakatsuki@we-b.co.jp" }/
-        %input.user-password{ type: "password", placeholder: "Password" }/
-      .col-md-12
-        %h4 Member of
-        .user-user-member.row
-          .user-name.col-md-12
-            %input{ type: "text", placeholder: "Member", value: "we-b inc." }/
-        %h4 Profile
-        .user-user-profile.row
-          .user-name.col-md-12
-            %textarea{ name: "textarea", cols: "30", rows: "4", placeholder: "Profile" }
-              I designer. I'm working with we-b inc.
-              I believe the everyday Web and UI / UX.
-              My hobby is collecting cassette tape.
-              Thank you very much in advance.
-        %h4 Works
-        .user-name_image.row
-          .user-name.col-md-12
-            %textarea{ name: "textarea", cols: "30", rows: "4", placeholder: "Works" }
-              2012 Sakura Internet inc. Designer
-              2012 we-b inc. Designer
-              2012 Life is Tech. Mentor
-              2014 Cookpad inc. Designer
-    .row.text-center.user-btn
-      %button.btn.btn-lg.btn-primary.btn-block{ type: "submit" } Save
+.container.user-new
+  = form_for @user do |f|
+    .col-md-8.col-md-offset-2
+      %header.row.user-nav.row
+        .col-md-12
+          %h2 Edit Profile
+          .user-name_image.row
+            .user-name.col-md-10
+              = f.text_field :username, placeholder: "Username", required: true
+            .user-image.col-md-2
+              = f.button "Change image", class: "btn btn-primary"
+              / uploaders/avatarを利用する際に変更する↓
+              %input{ type: "file" }/
+              / = f.file_field :avatar
+          = f.email_field :email, placeholder: "E-Mail", class: "user-email"
+        .col-md-12
+          %h4 Member of
+          .user-user-member.row
+            .user-name.col-md-12
+              = f.text_field :member, placeholder: "Member"
+          %h4 Profile
+          .user-user-profile.row
+            .user-name.col-md-12
+              = f.text_area :profile, cols: "30", rows: "4", placeholder: "Profile"
+          %h4 Works
+          .user-name_image.row
+            .user-name.col-md-12
+              = f.text_area :works, cols: "30", rows: "4", placeholder: "Works"
+      .row.text-center.user-btn
+        = f.submit "Save", class: "btn btn-lg btn-primary btn-block"
