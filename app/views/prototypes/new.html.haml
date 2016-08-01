@@ -10,18 +10,17 @@
         .col-md-12
           .cover-image-upload
             / fields_forを利用してcontentにはイメージの名前、roleにはmainである0を入れる
-            = f.fields_for :prototype_images do |prototype_image|
+            = f.fields_for :prototype_images, @main_content do |prototype_image|
               = prototype_image.file_field :content
               = prototype_image.hidden_field :role, value: "main"
         .col-md-12
           %ul.proto-sub-list.list-group
-            - 3.times do
+            / fields_forを利用してcontentにはイメージの名前、roleにはsubである1を入れる
+            = f.fields_for :prototype_images, @sub_contents do |prototype_image|
               %li.list-group-item.col-md-4
                 .image-upload
-                  / fields_forを利用してcontentにはイメージの名前、roleにはsubである1を入れる
-                  = f.fields_for :prototype_images do |prototype_image|
-                    = prototype_image.file_field :content
-                    = prototype_image.hidden_field :role, value: "sub"
+                  = prototype_image.file_field :content
+                  = prototype_image.hidden_field :role, value: "sub"
             / ↓今後の拡張性(subを3枚以上にする)のために残しておく？
             / %li.list-group-item.col-md-4
             /   .image-upload-plus

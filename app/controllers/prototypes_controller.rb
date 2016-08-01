@@ -9,7 +9,8 @@ class PrototypesController < ApplicationController
     @prototype = Prototype.new
     # ↓後でmainとsubでbuild方法を変数に入れ直して、fields_forの第二引数に入れて区別する必要あり
     # 理由としては、デフォルトで何かしらで画像が入っていないと、特にサブの場合変わったviewになる
-    @prototype.prototype_images.build
+    @main_content = @prototype.prototype_images.build
+    @sub_contents = 2.times { @prototype.prototype_images.build }
   end
 
   def show
@@ -34,7 +35,7 @@ class PrototypesController < ApplicationController
         :title,
         :catch_copy,
         :concept,
-        prototype_image_attributes: [:id, :content, :role]
+        prototype_images_attributes: [:id, :content, :role]
       )
     end
 
