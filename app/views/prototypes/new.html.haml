@@ -21,10 +21,6 @@
                 .image-upload
                   = prototype_image.file_field :content
                   = prototype_image.hidden_field :role, value: "sub"
-            / ↓今後の拡張性(subを3枚以上にする)のために残しておく？
-            / %li.list-group-item.col-md-4
-            /   .image-upload-plus
-            /     %span +
       .row.proto-description
         .col-md-12
           = f.text_field :catch_copy, placeholder: "Catch Copy"
