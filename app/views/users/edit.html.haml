@@ -9,9 +9,7 @@
               = f.text_field :username, placeholder: "Username", required: true
             .user-image.col-md-2
               = f.button "Change image", class: "btn btn-primary"
-              / uploaders/avatarを利用する際に変更する↓
-              %input{ type: "file" }/
-              / = f.file_field :avatar
+              = f.file_field :avatar
           = f.email_field :email, placeholder: "E-Mail", class: "user-email"
           = f.password_field :password, placeholder: "Password", class: "user-password"
         .col-md-12
