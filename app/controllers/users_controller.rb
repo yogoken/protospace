@@ -29,6 +29,7 @@ class UsersController < ApplicationController
         :member,
         :profile,
         :works
+        :avatar
         )
     end
 end
