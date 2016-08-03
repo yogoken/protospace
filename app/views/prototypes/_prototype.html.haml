@@ -1,0 +1,16 @@
+.col-sm-4.col-md-3.proto-content
+  .thumbnail
+    = link_to image_tag(prototype.prototype_images.first.content), prototype_path(prototype.id)
+    .caption
+      %h3= prototype.title
+      .proto-meta
+        .proto-user
+          = link_to "by #{prototype.user.username}", user_path(prototype.user.id), method: :get
+        .proto-posted
+          = prototype.created_at.strftime("%b %d")
+      / ↓tagを利用する際に編集
+      %ul.proto-tag-list.list-inline
+        %li
+          = link_to 'iPad', '#', class: "btn btn-default"
+        %li
+          = link_to 'wireframe', '#', class: "btn btn-default"

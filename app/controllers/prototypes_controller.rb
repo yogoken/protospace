@@ -3,6 +3,7 @@ class PrototypesController < ApplicationController
   before_action :move_to_index, except: :index
 
   def index
+    @prototypes = Prototype.eager_load(:user, :prototype_images).order("prototypes.created_at DESC")
   end
 
   def new
