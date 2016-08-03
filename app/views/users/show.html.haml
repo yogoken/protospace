@@ -8,7 +8,7 @@
           = @user.username
           %span.label.label-default.project-number
             / アソシエーション設定後@user.prototype.lengthなどでprototype数を表示
-            29
+            = @user.prototypes.length
             %i Projects
         .proto-user
           %span.degree
@@ -24,20 +24,7 @@
               = @user.works
 .container.proto-list
   .row
-    .col-sm-4.col-md-3.proto-content
-      .thumbnail
-        %a{ href: "" }
-          = image_tag("sample.png")
-          .caption
-            %h3 Salvation Army on iPad App Wireframe
-            .proto-meta
-              .proto-date
-                Apr 26
-            %ul.proto-tag-list.list-inline
-              %li
-                %a{ href: "#", class: "btn btn-default" } iPad
-              %li
-                %a{ href: "#", class: "btn btn-default" } wireframe
+    = render partial: "prototypes/prototype", collection: @user.prototypes
 .text-center
   %ul.pagination
     %li.disabled
