@@ -1,6 +1,7 @@
 class PrototypesController < ApplicationController
 
   before_action :move_to_index, except: :index
+  before_action :set_prototype, only: [:show]
 
   def index
     @prototypes = Prototype.eager_load(:user, :prototype_images).order("prototypes.created_at DESC")
@@ -38,6 +39,10 @@ class PrototypesController < ApplicationController
         :concept,
         prototype_images_attributes: [:id, :content, :role]
       )
+    end
+
+    def set_prototype
+      @prototype = Prototype.find(params[:id])
     end
 
 end
