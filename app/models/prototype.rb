@@ -8,4 +8,8 @@ class Prototype < ActiveRecord::Base
   validates :title,
             :catch_copy,
             :concept, presence: true
+
+  def liked_by?(user)
+    likes.find_by(user_id: user)
+  end
 end
