@@ -30,6 +30,14 @@ class PrototypesController < ApplicationController
     @sub_contents = @prototype.prototype_images.sub
   end
 
+  def update
+    if @prototype.update(prototype_params)
+      redirect_to root_path, notice: 'Updated prototype successfully'
+    else
+      redirect_to edit_prototype_path, alert: 'All forms can\'t be blank'
+    end
+  end
+
   private
     def move_to_index
       redirect_to action: :index unless user_signed_in?
