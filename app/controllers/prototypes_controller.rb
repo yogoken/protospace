@@ -1,7 +1,7 @@
 class PrototypesController < ApplicationController
 
   before_action :move_to_index, except: :index
-  before_action :set_prototype, only: [:show]
+  before_action :set_prototype, only: [:show, :edit, :update, :destroy]
 
   def index
     @prototypes = Prototype.eager_load(:user, :prototype_images).order("prototypes.created_at DESC")
@@ -9,8 +9,6 @@ class PrototypesController < ApplicationController
 
   def new
     @prototype = Prototype.new
-    # ↓後でmainとsubでbuild方法を変数に入れ直して、fields_forの第二引数に入れて区別する必要あり
-    # 理由としては、デフォルトで何かしらで画像が入っていないと、特にサブの場合変わったviewになる
     @main_content = @prototype.prototype_images.build
     @sub_contents = 2.times { @prototype.prototype_images.build }
   end
@@ -25,6 +23,24 @@ class PrototypesController < ApplicationController
     else
       render :new, alert: 'Sorry, but something went wrong'
     end
+  end
+
+  def edit
+    @main_content = @prototype.prototype_images.main
+    @sub_contents = @prototype.prototype_images.sub
+  end
+
+  def update
+    if @prototype.update(prototype_params)
+      redirect_to root_path, notice: 'Updated prototype successfully'
+    else
+      redirect_to edit_prototype_path, alert: 'All forms can\'t be blank'
+    end
+  end
+
+  def destroy
+    @prototype.destroy
+    redirect_to root_path, notice: 'Deleted prototype successfully'
   end
 
   private

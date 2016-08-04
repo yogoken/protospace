@@ -7,6 +7,9 @@
         .media-body
           %h4#top-aligned-media.media-heading
             = @prototype.title
+            - if @prototype.user_id == current_user.id
+              = link_to 'EDIT', edit_prototype_path(@prototype.id), class: "btn btn-xs btn-primary navbar-btn"
+              = link_to 'DELETE', prototype_path(@prototype.id), method: :delete, class: "btn btn-xs btn-primary navbar-btn"
           .proto-user
             = link_to "by #{ @prototype.user.username }", user_path(@prototype.user.id)
             %span.degree= @prototype.user.profile
