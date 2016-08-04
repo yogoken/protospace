@@ -25,6 +25,11 @@ class PrototypesController < ApplicationController
     end
   end
 
+  def edit
+    @main_content = @prototype.prototype_images.main
+    @sub_contents = @prototype.prototype_images.sub
+  end
+
   private
     def move_to_index
       redirect_to action: :index unless user_signed_in?
