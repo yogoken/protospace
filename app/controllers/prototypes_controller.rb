@@ -38,6 +38,11 @@ class PrototypesController < ApplicationController
     end
   end
 
+  def destroy
+    @prototype.destroy
+    redirect_to root_path, notice: 'Deleted prototype successfully'
+  end
+
   private
     def move_to_index
       redirect_to action: :index unless user_signed_in?
