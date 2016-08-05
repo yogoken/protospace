@@ -1,4 +1,4 @@
-class LikesController < ApplicationController
+class Prototypes::LikesController < ApplicationController
 
   before_action :set_prototype, only: [:create, :destroy]
   before_action :set_likes,     only: [:create, :destroy]
