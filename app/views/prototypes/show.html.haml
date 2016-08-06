@@ -42,8 +42,13 @@
   .row.proto-comments
     %h4.col-md-12
       Comments
-      %span.num (10)
+      / 後でAjaxで非同期通信を行い、文字カウントを変えるためにidで指定しておく
+      %span#comments-count
+        = "( #{ @prototype.comments.count } )"
     .col-md-8
+      / 後でAjaxで非同期通信を行い、投稿後すぐにブラウザに反応されるようにするため
+      #js-comments
+        = render partial: "prototypes/comments/comment", collection: @comments
       .media
         .media-left
           %a{ href: "#"}
