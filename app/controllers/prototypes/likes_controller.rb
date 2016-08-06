@@ -8,7 +8,7 @@ class Prototypes::LikesController < ApplicationController
   end
 
   def destroy
-    @prototype.likes.find_by(user_id: current_user.id).destroy
+    Like.find(params[:id]).destroy
   end
 
   private
@@ -17,6 +17,6 @@ class Prototypes::LikesController < ApplicationController
     end
 
     def set_likes
-      @likes = @prototype.likes
+      @likes = @prototype.likes.includes(:user, :prototype)
     end
 end
