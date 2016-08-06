@@ -14,11 +14,9 @@
             = link_to "by #{ @prototype.user.username }", user_path(@prototype.user.id)
             %span.degree= @prototype.user.profile
 
-    .col-md-6.text-right
-      %button.btn.btn-default
-        = image_tag("icon_heart.svg")
-        Like
-        %span.num 20
+    .col-md-6.text-right#js-like-buttons
+      = render partial: "prototypes/likes/like", locals: { prototype: @prototype, like: @like }
+
   .row
     .col-md-9
       = image_tag("#{ @prototype.prototype_images.first.content }", class: 'img-responsive')

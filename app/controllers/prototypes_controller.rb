@@ -14,6 +14,7 @@ class PrototypesController < ApplicationController
   end
 
   def show
+    @like = @prototype.likes
   end
 
   def create
