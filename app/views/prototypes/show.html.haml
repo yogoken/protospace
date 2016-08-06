@@ -49,43 +49,16 @@
       / 後でAjaxで非同期通信を行い、投稿後すぐにブラウザに反応されるようにするため
       #js-comments
         = render partial: "prototypes/comments/comment", collection: @comments
-      .media
-        .media-left
-          %a{ href: "#"}
-            %img.media-object{ alt: "64x64", "data-holder-rendered": "true", "data-src": "holder.js/64x64", src: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGRlZnMvPjxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjEzLjQ2MDkzNzUiIHk9IjMyIiBzdHlsZT0iZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQ7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NjR4NjQ8L3RleHQ+PC9nPjwvc3ZnPg==", style: "width: 64px; height: 64px;"}/
-        .media-body
-          %h4#top-aligned-media.media-heading
-            Top aligned media
-            %a.anchorjs-link{ href: "#top-aligned-media"}
-              %span.anchorjs-icon
-          %p Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-          %p Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      .media
-        .media-left.media-middle
-          %a{ href: "#"}
-            %img.media-object{ alt: "64x64", "data-holder-rendered": "true", "data-src": "holder.js/64x64", src: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGRlZnMvPjxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjEzLjQ2MDkzNzUiIHk9IjMyIiBzdHlsZT0iZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQ7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NjR4NjQ8L3RleHQ+PC9nPjwvc3ZnPg==", style: "width: 64px; height: 64px;"}/
-        .media-body
-          %h4#middle-aligned-media.media-heading
-            Middle aligned media
-            %a.anchorjs-link{ href: "#middle-aligned-media"}
-              %span.anchorjs-icon
-          %p Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-          %p Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      .media
-        .media-left.media-bottom
-          %a{ href: "#"}
-            %img.media-object{ alt: "64x64", "data-holder-rendered": "true", "data-src": "holder.js/64x64", src: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGRlZnMvPjxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjEzLjQ2MDkzNzUiIHk9IjMyIiBzdHlsZT0iZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQ7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NjR4NjQ8L3RleHQ+PC9nPjwvc3ZnPg==", style: "width: 64px; height: 64px;"}/
-        .media-body
-          %h4#bottom-aligned-media.media-heading
-            Bottom aligned media
-            %a.anchorjs-link{ href: "#bottom-aligned-media"}
-              %span.anchorjs-icon
-          %p Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-          %p Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      %form.form-inline{ role: "form"}
-        %h4 Write a comment
-        .row
-          .form-group.col-md-10
-            %textarea.form-control{ placeholder: "Your comments", rows: "3"}
-          .form-group.col-md-2
-            %button.btn.btn-primary Comment
+      .form-inline
+        / ユーザーがサインインしている状態のみコメントフォームを出す
+        - if user_signed_in?
+          / hidden_fieldでuser_idとprototype_idをとることによってcomments時に同時にデータベースへ保存
+          = form_for [@prototype, @comment], remote: true do |f|
+            = f.hidden_field :user_id, value: current_user.id
+            = f.hidden_field :prototype_id, value: @prototype.id
+            %h4 Write a comment
+            .row
+              .form-group.col-md-10
+                = f.text_area :content, placeholder: "Your comments", class: "form-control", rows: "3"
+              .form-group.col-md-2
+                = f.submit "Comment", class: 'button btn btn-primary'

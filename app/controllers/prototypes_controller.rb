@@ -15,6 +15,8 @@ class PrototypesController < ApplicationController
 
   def show
     @like = @prototype.likes
+    @comment = Comment.new(prototype_id: @prototype_id)
+    @comments = @prototype.comments.includes(:user).all
   end
 
   def create
