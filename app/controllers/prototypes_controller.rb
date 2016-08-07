@@ -5,6 +5,7 @@ class PrototypesController < ApplicationController
 
   def index
     @prototypes = Prototype.eager_load(:user, :prototype_images).order("prototypes.created_at DESC")
+    @status = 'newest'
   end
 
   def new
