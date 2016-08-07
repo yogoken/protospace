@@ -1,0 +1,10 @@
+.media
+  .media-left
+    = link_to image_tag(comment.user.avatar, size: "64x64"), user_path(@prototype.user)
+  .media-body
+    %h4#top-aligned-media.media-heading
+      = link_to "#{comment.user.username}", user_path(comment.user), class: "anchorjs-link"
+      - if comment.user_id == current_user.id
+        = link_to "Delete", prototype_comment_path(comment, prototype_id: comment.prototype.id), method: :delete, class: "btn btn-xs btn-primary", remote: true
+      %p
+        = comment.content

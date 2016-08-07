@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   resources :prototypes do
     scope module: :prototypes do
-      resources :likes, only: [:create, :destroy]
+      resources :likes,    only: [:create, :destroy]
+      resources :comments, only: [:create, :destroy]
     end
   end
 end
