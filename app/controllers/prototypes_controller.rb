@@ -58,7 +58,9 @@ class PrototypesController < ApplicationController
         :catch_copy,
         :concept,
         prototype_images_attributes: [:id, :content, :role]
-      )
+      # 確認1 prototype.rbで定義したacts_as_taggableにより、prototype生成時に.merge(tag_list: )が利用することができる
+      # それにより、prototypes/new.html.hamlで入力した値がparams[:prototype][:tag][:ここに入力した値が入る]なり、tagsテーブルに保存される
+      ).merge(tag_list: params[:prototype][:tag])
     end
 
     def set_prototype

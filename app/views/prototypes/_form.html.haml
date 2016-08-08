@@ -25,13 +25,15 @@
           = f.text_area :concept, cols: "30", rows: "4", placeholder: "Concept"
         .col-md-12
           %h4 Tag List
-          / tagの実装の際、フォームを書き換える
           .row
             .col-md-3
-              %input{ type: "text", placeholder: "Web Design" }/
+              = text_field_tag "prototype[tag][]", "", placeholder: "Web Design"
             .col-md-3
-              %input{ type: "text", placeholder: "UI" }/
+              = text_field_tag "prototype[tag][]", "", placeholder: "UI"
             .col-md-3
-              %input{ type: "text", placeholder: "Application" }/
+              = text_field_tag "prototype[tag][]", "", placeholder: "Application"
       .row.text-center.proto-btn
         = f.submit "Publish", class: "btn btn-lg btn-primary btn-block"
+
+/ 確認2 上のtext_field_tagで→<input id="query", name="prototype[tag][]", type="text", value="", placeholder="Web Design"
+/ が生成される。その後ユーザーが入力した値がtags テーブルのnameに入り、tags/indexで格納されたものから順に表示される

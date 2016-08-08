@@ -10,6 +10,9 @@ class Prototype < ActiveRecord::Base
             :catch_copy,
             :concept, presence: true
 
+  acts_as_taggable
+  acts_as_ordered_taggable_on :prototypes
+
   def liked_by?(user)
     likes.find_by(user_id: user)
   end
