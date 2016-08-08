@@ -8,9 +8,7 @@
           = link_to "by #{prototype.user.username}", user_path(prototype.user.id), method: :get
         .proto-posted
           = prototype.created_at.strftime("%b %d")
-      / ↓tagを利用する際に編集
       %ul.proto-tag-list.list-inline
-        %li
-          = link_to 'iPad', '#', class: "btn btn-default"
-        %li
-          = link_to 'wireframe', '#', class: "btn btn-default"
+        - prototype.tags.each do |tag|
+          %li
+            = link_to tag.name, tag_path(tag.id), class: "btn btn-default"
