@@ -14,21 +14,9 @@
 
 .container
   .row
-    .col-sm-4.col-sm-3
-      %a.tag.thumbnail{href: "/tags/1"}
-        .tag-name
-          web
-        .tag-project
-          1 project
-    .col-sm-4.col-sm-3
-      %a.tag.thumbnail{href: "/tags/2"}
-        .tag-name
-          iOS
-        .tag-project
-          1 project
-    .col-sm-4.col-sm-3
-      %a.tag.thumbnail{href: "/tags/3"}
-        .tag-name
-          Design
-        .tag-project
-          1 project
+    %ul.proto-tag-list.list-inline
+      - @tags.each do |tag|
+        .col-sm-4.tag.thumbnail
+          = link_to tag.name, tag_path(tag.id), class: "tag-name btn btn-default btn-tag"
+          .tag-project
+            = link_to "#{tag.taggings_count} Projects", tag_path(tag.id), class: "btn btn-default btn-tag"
