@@ -14,17 +14,4 @@
 
 .container
   .row
-    .tag-header
-      %span # web
-    .col-sm-4.col-md-3.proto-content
-      .thumbnail
-        %a{href: "/prototypes/10"}
-          %img{alt: " ", src: "milano.jpg"}/
-        .caption
-          %h3
-            aaa post!!!!!![test version]
-          .proto-meta
-            .proto-user
-              %a{href: "/users/1"} by aaa
-            .proto-posted
-              Jun 10 
+    = render partial: "prototypes/prototype", collection: @prototypes
