@@ -15,3 +15,7 @@
 .container
   .row
     = render partial: "prototypes/prototype", collection: @prototypes
+.text-center
+  %ul.pagination
+    %li.disabled
+      = paginate(@prototypes)
