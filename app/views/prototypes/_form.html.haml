@@ -26,12 +26,9 @@
         .col-md-12
           %h4 Tag List
           .row
-            .col-md-3
-              = text_field_tag "prototype[tag][]", "", placeholder: "Web Design"
-            .col-md-3
-              = text_field_tag "prototype[tag][]", "", placeholder: "UI"
-            .col-md-3
-              = text_field_tag "prototype[tag][]", "", placeholder: "Application"
+            - Settings.tag_list_example.each do |tag|
+              .col-md-4
+                = text_field_tag "prototype[tag][]", "", placeholder: tag
       .row.text-center.proto-btn
         = f.submit "Publish", class: "btn btn-lg btn-primary btn-block"
 
