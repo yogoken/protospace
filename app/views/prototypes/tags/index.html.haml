@@ -1,0 +1,22 @@
+.jumbotron
+  .container.text-center
+    = image_tag("header_logo.png", alt: "PROTO TYPE - SHARE THE PROTOTYPE", height: "73px")
+
+.filter-nav
+  .container
+    .row
+      %ul.nav.nav-pills.col-lg-11
+        %li{ class: "#{ "active" if @status == 'popular' }" }
+          = link_to 'Popular PROTO', popular_index_path
+        %li{ class: "#{ "active" if @status == 'newest' }" }
+          = link_to 'Newest PROTO', root_path
+      = link_to 'View Tags', tags_path, class: "btn btn-default col-lg-1"
+
+.container
+  .row
+    %ul.proto-tag-list.list-inline
+      - @tags.each do |tag|
+        .col-sm-4.tag.thumbnail
+          = link_to tag.name, tag_path(tag.id), class: "tag-name btn btn-default btn-tag"
+          .tag-project
+            = link_to "#{tag.taggings_count} Projects", tag_path(tag.id), class: "btn btn-default btn-tag"

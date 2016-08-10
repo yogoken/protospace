@@ -1,0 +1,17 @@
+.jumbotron
+  .container.text-center
+    = image_tag("header_logo.png", alt: "PROTO TYPE - SHARE THE PROTOTYPE", height: "73px")
+
+.filter-nav
+  .container
+    .row
+      %ul.nav.nav-pills.col-lg-11
+        %li{ class: "#{ "active" if @status == 'popular' }" }
+          = link_to 'Popular PROTO', popular_index_path
+        %li{ class: "#{ "active" if @status == 'newest' }" }
+          = link_to 'Newest PROTO', root_path
+      = link_to 'View Tags', tags_path, class: "btn btn-default col-lg-1"
+
+.container
+  .row
+    = render partial: "prototypes/prototype", collection: @prototypes

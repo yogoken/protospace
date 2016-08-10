@@ -10,7 +10,7 @@
           = link_to 'Popular PROTO', popular_index_path
         %li{ class: "#{ "active" if @status == 'newest' }" }
           = link_to 'Newest PROTO', root_path
-      = button_tag 'View Tags', type: "button", class: "btn btn-default col-lg-1"
+      = link_to 'View Tags', tags_path, class: "btn btn-default col-lg-1"
 
 .container.proto-list
   .row
