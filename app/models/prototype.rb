@@ -13,6 +13,8 @@ class Prototype < ActiveRecord::Base
   acts_as_taggable
   acts_as_ordered_taggable_on :prototypes
 
+  paginates_per 5
+
   def liked_by?(user)
     likes.find_by(user_id: user)
   end
