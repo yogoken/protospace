@@ -12,12 +12,22 @@ source 'https://rubygems.org'
 
 group :development, :test do
   gem 'byebug'
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem "faker"
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'pry-rails'
+end
+
+group :test do
+  gem "capybara"
+  gem "database_cleaner"
+  gem "launchy"
+  gem "poltergeist"
 end
 
   gem 'haml-rails'
