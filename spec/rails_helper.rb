@@ -6,6 +6,7 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/poltergeist'
 require 'devise'
+require 'support/controller_macros'
 
 Capybara.javascript_driver = :poltergeist
 
@@ -19,4 +20,5 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   # ↓deviseを使って認証しているコントローラーのテストを書くための準備
   config.include Devise::Test::ControllerHelpers, type: :controller
+  config.extend ControllerMacros, type: :controller
 end
