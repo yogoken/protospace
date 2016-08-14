@@ -4,8 +4,7 @@ describe User do
   describe '#create' do
     describe "with valid attributes" do
       it "is valid with all information" do
-        user = build(:user)
-        expect(user).to be_valid
+        expect(build(:user)).to be_valid
       end
     end
 
