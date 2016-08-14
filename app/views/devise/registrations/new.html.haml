@@ -10,7 +10,8 @@
               = f.text_field :username, autofocus: true, placeholder: "Username", required: true
             .user-image.col-md-2
               = f.button "Add image", class: "btn btn-primary"
-              = f.file_field :avatar
+              .js-preview-image
+                = f.file_field :avatar
           .user-email
             = f.email_field :email, placeholder: "E-Mail"
           .user-password
