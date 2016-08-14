@@ -19,7 +19,11 @@ describe Prototype do
     end
 
     describe 'with comments' do
-      it 'deletes the comments when Prototype is deleted'
+      let(:comments_count) { 1 }
+      let!(:prototype) { create(:prototype, :with_comments, comments_count: comments_count) }
+      it 'deletes the comments when Prototype is deleted' do
+        expect{ prototype.destroy }.to change(Comment, :count).by(-1 * comments_count)
+      end
     end
   end
 
