@@ -24,11 +24,19 @@ describe PrototypeImage do
     end
 
     describe 'without a content attribute' do
-      it 'returns error'
+      it 'returns error' do
+        prototype_image = build(:prototype_image, :main, content: nil)
+        prototype_image.valid?
+        expect(prototype_image.errors[:content]).to include("can't be blank")
+      end
     end
 
     describe 'without a role attribute' do
-      it 'returns error'
+      it 'returns error' do
+        prototype_image = build(:prototype_image, role: nil)
+        prototype_image.valid?
+        expect(prototype_image.errors[:role]).to include("can't be blank")
+      end
     end
   end
 end
