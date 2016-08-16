@@ -10,7 +10,8 @@ require 'devise'
 require 'support/controller_macros'
 
 Capybara.javascript_driver = :poltergeist
-
+# [重要]RSpec3ではデフォルトでspec/support/を自動的に読み込まない設定になっていたので、デフォルトでコメントアウトされているものを外す必要がある。これにより、spec/supportディレクトリ内のファイルも読み込まれるようになる
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
