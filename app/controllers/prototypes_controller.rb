@@ -1,5 +1,6 @@
 class PrototypesController < ApplicationController
 
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :move_to_index, except: :index
   before_action :set_prototype, only: [:show, :edit, :update, :destroy]
 
@@ -25,7 +26,8 @@ class PrototypesController < ApplicationController
     if @prototype.save
       redirect_to root_path, notice: 'Saved prototype successfully'
     else
-      render :new, alert: 'Sorry, but something went wrong'
+      # renderの際にgot: nilというエラーだったためredirect_toに変更した
+      redirect_to new_prototype_path, alert: 'Sorry, but something went wrong'
     end
   end
 
