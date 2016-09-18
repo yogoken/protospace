@@ -7,5 +7,5 @@ s3:
   access_key: ENV['ACCESS_KEY_ID']
   secret_access_key: ENV['SECRET_ACCESS_KEY']
   region: 'us-east-1'
-  fog_directory: 'protospace-uploading-images'
-  asset_host: 'https://s3.amazonaws.com/protospace-uploading-images'
+  fog_directory: 'protospace-yogoken'
+  asset_host: 'https://s3.amazonaws.com/protospace-yogoken'
