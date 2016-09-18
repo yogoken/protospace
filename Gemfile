@@ -9,12 +9,25 @@ source 'https://rubygems.org'
   gem 'turbolinks'
   gem 'jbuilder', '~> 2.0'
   gem 'sdoc', '~> 0.4.0', group: :doc
+  gem 'haml-rails'
+  gem 'erb2haml'
+  gem 'bootstrap-sass'
+  gem 'devise'
+  gem 'carrierwave'
+  gem 'acts-as-taggable-on', '~> 3.4'
+  gem 'config'
+  gem 'kaminari'
+  gem 'fog'
 
 group :development, :test do
   gem 'byebug'
-  gem "rspec-rails"
-  gem "factory_girl_rails"
-  gem "faker"
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
 end
 
 group :development do
@@ -24,13 +37,14 @@ group :development do
 end
 
 group :test do
-  gem "capybara"
-  gem "database_cleaner"
-  gem "launchy"
-  gem "poltergeist"
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'poltergeist'
 end
 
 group :production do
+
   gem "unicorn"
 end
 
@@ -43,3 +57,7 @@ end
   gem 'config'
   gem 'kaminari'
   gem 'fog'
+
+
+
+
