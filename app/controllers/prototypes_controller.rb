@@ -1,11 +1,11 @@
+# Solve missing top-level class documentation comment.
 class PrototypesController < ApplicationController
-
   before_action :authenticate_user!, except: [:index, :show]
   before_action :move_to_index, except: :index
   before_action :set_prototype, only: [:show, :edit, :update, :destroy]
 
   def index
-    @prototypes = Prototype.eager_load(:user, :prototype_images).order("prototypes.created_at DESC").page(params[:page])
+    @prototypes = Prototype.eager_load(:user, :prototype_images).order('prototypes.created_at DESC').page(params[:page])
     @status = 'newest'
   end
 
@@ -50,6 +50,7 @@ class PrototypesController < ApplicationController
   end
 
   private
+
     def move_to_index
       redirect_to action: :index unless user_signed_in?
     end
