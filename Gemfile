@@ -44,5 +44,20 @@ group :test do
 end
 
 group :production do
-  gem 'unicorn'
+
+  gem "unicorn"
 end
+
+  gem 'haml-rails'
+  gem 'erb2haml'
+  gem 'bootstrap-sass'
+  gem 'devise'
+  gem 'carrierwave'
+  gem 'acts-as-taggable-on', '~> 3.4'
+  gem 'config'
+  gem 'kaminari'
+  gem 'fog'
+
+
+
+
